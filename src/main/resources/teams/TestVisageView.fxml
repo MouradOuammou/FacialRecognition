@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="518.0" prefWidth="513.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teams.reconnaissance.controller.TestVisageController">
+    <children>
+        <!-- Image Display -->
+        <ImageView fx:id="cameraView" fitHeight="407.0" fitWidth="513.0" />
+        <Label fx:id="faceCountLabel" layoutX="10" layoutY="10" text="Faces Detected: 0" />
+
+        <!-- Toolbar Panel -->
+        <HBox layoutX="20" layoutY="430" spacing="10">
+            <!-- Save Panel -->
+            <VBox spacing="10">
+                <Label text="Name of person in frame :" />
+                <TextField fx:id="txtFileName" promptText="Enter name" />
+            </VBox>
+
+            <!-- Color Panel -->
+            <VBox spacing="10" />
+        </HBox>
+        <ComboBox fx:id="colorComboBox" layoutX="407.0" layoutY="458.0" style="-fx-background-color: #ddd;">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="BLUE" />
+                    <String fx:value="CYAN" />
+                    <String fx:value="GREEN" />
+                    <String fx:value="MAGENTA" />
+                    <String fx:value="ORANGE" />
+                    <String fx:value="RED" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <Label layoutX="429.0" layoutY="427.0" text="Choose Color:" />
+        <Button layoutX="201.0" layoutY="456.0" onAction="#saveFace" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #ddd;" text="Save Face" />
+    </children>
+</AnchorPane>
